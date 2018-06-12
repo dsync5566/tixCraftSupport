@@ -14,7 +14,7 @@
     {
       "matches" : [ "https://tixcraft.com/*" ],
       "run_at": "document_end",
-      "js" : [ "jquery-3.3.1.js", "contentScript.js" ]
+      "js" : [ "jquery.min.js", "contentScript.js" ]
     }
   ],
   "manifest_version": 2
