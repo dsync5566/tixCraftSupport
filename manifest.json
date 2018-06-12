@@ -1,0 +1,21 @@
+{
+  "name": "tixCraft Support",
+  "description": "拓元輔助程式",
+  "version": "1.0",
+  "permissions": [ "activeTab", "storage", "*://*/*" ],
+  "background": {
+    "scripts": [ "background.js" ]
+  },
+  "browser_action": {
+    "default_title": "title"
+  },
+  "options_page": "options.html",
+  "content_scripts" : [
+    {
+      "matches" : [ "https://tixcraft.com/*" ],
+      "run_at": "document_end",
+      "js" : [ "jquery-3.3.1.js", "contentScript.js" ]
+    }
+  ],
+  "manifest_version": 2
+}
