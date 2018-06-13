@@ -13,7 +13,7 @@
 
 
 ## 設定
-1. 右鍵點選拓元輔助ICON，選擇選項。
+1. 左鍵或右鍵點選拓元輔助ICON，右鍵要選擇選項。
 2. 點選日期
 
 <img width="768" src="assets/options.png" alt="options" />
