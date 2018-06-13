@@ -20,4 +20,4 @@
 
 
 ## 驗證碼
-拓元驗證碼解說與練習 [外部網站](http://www.caca01.com/%E6%8B%93%E5%85%83%E8%B3%BC%E7%A5%A8%E7%B3%BB%E7%B5%B1%E9%A9%97%E8%AD%89%E7%A2%BC%E6%94%BB%E7%95%A5%EF%BD%9C%E5%8D%A1%E5%8D%A1%E9%81%8A%E6%88%B2/)
+拓元驗證碼解說與練習 [外部網站](https://goo.gl/NUk68T)
