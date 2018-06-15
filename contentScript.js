@@ -21,11 +21,15 @@ $(".activityContent ul.list-inline a").each(function() {
 
               if (target.length) {
                 console.log("date 2: " + target.text());
-                let link = target.next().next().next().find("input:button").attr("data-href");
-                console.log("link: " +  link);
-                window.location.href = link;
+                let link = target.parent().find("input:button").attr("data-href");
+                if (link) {
+                  console.log("link: " + link);
+                  window.location.href = link;
+                } else {
+                  console.log("not found link!");
+                }
               } else {
-                console.log("not found!");
+                console.log("not found program!");
               }
             }
         });

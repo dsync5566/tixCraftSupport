@@ -6,7 +6,7 @@
 
 <img width="768" src="assets/step1.png" alt="step1" />
 
-3. 手動選擇座位 (尚未實作)
+3. 手動選擇座位 (自動隱藏已售完區域)
 4. 自動選擇最大張數與勾選同意條款，並準備好輸入驗證碼，輸入完按Enter。
 
 <img width="768" src="assets/step2.png" alt="step2" />
