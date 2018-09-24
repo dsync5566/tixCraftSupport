@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Extension Options</title>
-<meta charset="UTF-8">
+    <title>Extension Options</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/options.css" />
 </head>
-<body style="margin: 36px;">
+<body>
 
-<h2>拓元輔助程式設定頁面</h2>
-
-<div>
-<input type="checkbox" id="pauto" class='option' />  
-<label>自動點選節目</label>
-<br>
-<br>
-<label>節目日期 :</label>
-<br>
-<input type="date" id="pdate">
-</div>
+<h2>拓元輔助程式設定頁面<span id="ver"></span></h2>
 
 <div>
-
+  <input type="checkbox" id="pauto" class='option' />  
+  <label>自動點選節目</label>
+  <br>
+  <br>
+  <label>節目日期 :</label>
+  <br>
+  <input type="date" id="pdate">
+  <br>
+  <br>
+  <label>張數選擇 :</label>
+  <br>
+  <select id="tnum">
+    <option value="0">最大張數</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
 </div>
 
 <div id="status"></div>

@@ -11,10 +11,12 @@
 
 <img width="768" src="assets/step2.png" alt="step2" />
 
+PS. 玉山信用卡頁面自動填入前六碼，其他家不支援。
 
 ## 設定
 1. 左鍵或右鍵點選拓元輔助ICON，右鍵要選擇選項。
 2. 點選日期
+3. 可以設定購買張數
 
 <img width="768" src="assets/options.png" alt="options" />
 
