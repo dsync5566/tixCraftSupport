@@ -34,3 +34,23 @@ function restore_options() {
 document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('save').addEventListener('click', save_options);
 document.getElementById('ver').textContent = " v" + chrome.runtime.getManifest().version;
+
+// show program information
+let AreaInfo = chrome.extension.getBackgroundPage().AreaInfo;
+console.log(AreaInfo);
+
+if (AreaInfo) {
+  document.getElementById('ProgramTitle').textContent += AreaInfo.title;
+
+  let AreaList = "";
+  for (var i = 0; i < AreaInfo.list.length; i++) {
+    let text = AreaInfo.list[i].text;
+    let url = AreaInfo.url + AreaInfo.list[i].url;
+
+    url = url.link(url);
+
+    AreaList += "<div>" + text + " --- "+ url + "</div>";
+  }
+
+  document.getElementById('AreaList').innerHTML = AreaList;
+}

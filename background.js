@@ -5,9 +5,10 @@ chrome.browserAction.onClicked.addListener(tab => {
   })
 });
 
-/*
+// global
+var AreaInfo;
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  const tabId = sender.tab.id
-  console.log(message, tabId)
+  //const tabId = sender.tab.id
+  //console.log(message, tabId)
+  AreaInfo = message;
 });
-*/
