@@ -1,14 +1,14 @@
 // Saves options to chrome.storage
 function save_options() {
-    var pauto = document.getElementById('pauto').checked;
-    var pdate = document.getElementById('pdate').value;
-    var tselect = document.getElementById("tnum");
-    var tnum = tselect.options[tselect.selectedIndex].value;
+    var ProgramAuto = document.getElementById('ProgramAuto').checked;
+    var ProgramDate = document.getElementById('ProgramDate').value;
+    var tselect = document.getElementById('TicketNumber');
+    var TicketNumber = tselect.options[tselect.selectedIndex].value;
 
     chrome.storage.local.set({
-        ProgramAuto: pauto,
-        ProgramDate: pdate,
-        TicketNumber: tnum
+        ProgramAuto,
+        ProgramDate,
+        TicketNumber
     }, function() {
         // Update status to let user know options were saved.
         var status = document.getElementById('status');
@@ -26,11 +26,11 @@ function restore_options() {
         TicketNumber: 0
     }, items => {
         console.log(items);
-        document.getElementById('pauto').checked = items.ProgramAuto;
-        document.getElementById('pdate').value = items.ProgramDate;    
-        document.getElementById("tnum").selectedIndex = items.TicketNumber;
+        document.getElementById('ProgramAuto').checked = items.ProgramAuto;
+        document.getElementById('ProgramDate').value = items.ProgramDate;
+        document.getElementById('TicketNumber').selectedIndex = items.TicketNumber;
     });
 }
 document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('save').addEventListener('click', save_options);
-document.getElementById("ver").textContent = " v" + chrome.runtime.getManifest().version;
+document.getElementById('ver').textContent = " v" + chrome.runtime.getManifest().version;

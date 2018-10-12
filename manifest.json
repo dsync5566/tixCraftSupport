@@ -1,7 +1,7 @@
 {
   "name": "tixCraft Support",
   "description": "拓元輔助程式",
-  "version": "1.3",
+  "version": "1.3.1",
   "permissions": [ "activeTab", "storage" ],
   "background": {
     "scripts": [ "background.js" ]
@@ -15,6 +15,16 @@
       "matches" : [ "https://tixcraft.com/*" ],
       "run_at": "document_end",
       "js" : [ "jquery.min.js", "contentScript.js" ]
+    },
+    {
+      "matches" : [ "https://tixcraft.com/ticket/ticket/*" ],
+      "run_at": "document_end",
+      "js" : [ "jquery.min.js", "js/ticket.js" ]
+    },
+    {
+      "matches" : [ "https://tixcraft.com/activity/game/*" ],
+      "run_at": "document_end",
+      "js" : [ "jquery.min.js", "js/game.js" ]
     }
   ],
   "manifest_version": 2
