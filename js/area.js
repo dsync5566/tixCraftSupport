@@ -28,3 +28,17 @@ document.addEventListener('connectExtension', function(e) {
 
   chrome.runtime.sendMessage(msg);
 });
+
+/*
+let scripts = document.getElementsByTagName('script');
+console.log("scripts number " + scripts.length);
+for (let i = 0; i < scripts.length; i++) {
+  let data = scripts[i].innerHTML;
+  if (data.includes("areaUrlList")) {
+    console.log("hit script " + i);
+    data = data.substr(data.indexOf("areaUrlList"), 300);
+    console.log(data);
+    break;
+  }
+}
+*/

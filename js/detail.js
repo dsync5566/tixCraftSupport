@@ -1,7 +1,7 @@
 //
 $(".activityContent ul.list-inline a").each(function() {
   if ($(this).attr("href").match(/activity\/game\//)) {
-    console.log("find activity game !!")
+    console.log("find activity game !!");
 
     $.get($(this).attr("href"), function(response) {
         $("#gameListContainer").html(response);
@@ -15,7 +15,7 @@ $(".activityContent ul.list-inline a").each(function() {
             ProgramDate: '2018-06-01'
         }, items => {
             if (items.ProgramAuto) {
-              let dstr = items.ProgramDate.replace(/-/g, "/")
+              let dstr = items.ProgramDate.replace(/-/g, "/");
               let target = $(".normal td:contains('" + dstr + "')").first();
               console.log("date 1: " + dstr);
 
