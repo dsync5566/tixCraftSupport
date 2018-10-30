@@ -20,10 +20,10 @@ document.addEventListener('connectExtension', function(e) {
   };
   //console.log(e.detail);
   $("ul.area-list > li.select_form_b a, ul.area-list > li.select_form_a a").each(function(index) {
-    console.log("find area info " + $(this).text() + " - " + e.detail[$(this).attr("id")]);
     let text = $(this).text();
     let url = e.detail[$(this).attr("id")];
     msg.list[index] = {text, url};
+    console.log("find area info " + text + " - " + url);
   });
 
   chrome.runtime.sendMessage(msg);

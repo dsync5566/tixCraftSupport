@@ -5,13 +5,21 @@ for (let i = 0; i < scripts.length; i++) {
   let data = scripts[i].innerHTML;
   if (data.includes("TicketForm") && data.includes("mousedown")) {
     console.log("hit script " + i);
-    let agree_regexp = /TicketForm\[agree]\[(.{44})]/;
-    let agree = agree_regexp.exec(data)[0];
-    let ticketPrice_regexp = /TicketForm\[ticketPrice]\[(.{44})]/;
-    let ticketPrice = ticketPrice_regexp.exec(data)[0];
 
-    $("#TicketForm_agree").prop('checked', true).prop('name', agree);
-    $("#TicketForm_checked").prop('name', ticketPrice);
+    if ($("#TicketForm_agree").length) {
+      let agree_regexp = /TicketForm\[agree]\[(.{44})]/;
+      let agree = agree_regexp.exec(data)[0];
+
+      console.log("agree: " + agree);
+      $("#TicketForm_agree").prop('checked', true).prop('name', agree);
+    }
+
+    if ($("#TicketForm_checked").length) {
+      let ticketPrice_regexp = /TicketForm\[ticketPrice]\[(.{44})]/;
+      let ticketPrice = ticketPrice_regexp.exec(data)[0];
+      console.log("ticketPrice: " + ticketPrice);
+      $("#TicketForm_checked").prop('name', ticketPrice);
+    }
     break;
   }
 }
