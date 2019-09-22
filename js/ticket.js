@@ -57,7 +57,13 @@ if ($ticket_options.length) {
 
 // scale 2x
 let $verifyImage = $("#yw0");
-$verifyImage.width($verifyImage.width()*2);
+if ($verifyImage.width() == 0) {
+  console.log("image width is zero!");
+  $verifyImage.width(240);
+  $verifyImage.height(200);
+} else {
+  $verifyImage.width($verifyImage.width()*2);
+}
 //$verifyImage.height($verifyImage.height()*2);
 
 // please input verify code
