@@ -1,13 +1,13 @@
 {
   "name": "tixCraft Support",
-  "description": "拓元輔助程式",
-  "version": "1.3.3",
+  "description": "購票輔助程式",
+  "version": "1.4.0",
   "permissions": [ "activeTab", "storage" ],
   "background": {
     "scripts": [ "background.js" ]
   },
   "browser_action": {
-    "default_title": "拓元輔助"
+    "default_title": "購票輔助"
   },
   "options_page": "options.html",
   "content_scripts" : [

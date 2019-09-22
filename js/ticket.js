@@ -1,10 +1,9 @@
 // ticket
 let scripts = document.getElementsByTagName('script');
-console.log("scripts number " + scripts.length);
 for (let i = 0; i < scripts.length; i++) {
   let data = scripts[i].innerHTML;
   if (data.includes("TicketForm") && data.includes("mousedown")) {
-    console.log("hit script " + i);
+    console.log("total " + scripts.length + ", hit script " + i);
 
     if ($("#TicketForm_agree").length) {
       let agree_regexp = /TicketForm\[agree]\[(.{44})]/;
@@ -14,9 +13,11 @@ for (let i = 0; i < scripts.length; i++) {
       $("#TicketForm_agree").prop('checked', true).prop('name', agree);
     }
 
+    // the field deleted by tix
     if ($("#TicketForm_checked").length) {
       let ticketPrice_regexp = /TicketForm\[ticketPrice]\[(.{44})]/;
       let ticketPrice = ticketPrice_regexp.exec(data)[0];
+
       console.log("ticketPrice: " + ticketPrice);
       $("#TicketForm_checked").prop('name', ticketPrice);
     }
@@ -54,9 +55,15 @@ if ($ticket_options.length) {
   });
 }
 
+// scale 2x
+let $verifyImage = $("#yw0");
+$verifyImage.width($verifyImage.width()*2);
+//$verifyImage.height($verifyImage.height()*2);
+
+// please input verify code
 $("#TicketForm_verifyCode").focus();
  
-/*
+/* old method
 let data = document.getElementsByTagName('html')[0].innerHTML;
 let agree = data.substr(data.indexOf("TicketForm[agree][", 4000), 63);
 $("#TicketForm_agree").prop('checked', true).prop('name', agree);
