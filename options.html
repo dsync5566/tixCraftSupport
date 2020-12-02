@@ -10,6 +10,16 @@
 <h2>購票輔助程式設定頁面<span id="ver"></span></h2>
 
 <div>
+  <input type="checkbox" id="HideBadArea" class='option' />
+  <label>自動隱藏 "遮擋", "護網", "鐵網", "不完整" 區</label>
+  <br>
+  <br>
+  <input type="checkbox" id="ShowOnlyArea" class='option' />
+  <label>僅顯示這些區域，名稱用逗點隔開。(Ex. A區,B區 )</label>
+  <br>
+  <input type="text" id="AreaName" style="margin-left: 24px;">
+  <br>
+  <br>
   <input type="checkbox" id="ProgramAuto" class='option' />
   <label>自動點選節目</label>
   <br>
@@ -28,6 +38,7 @@
     <option value="3">3</option>
     <option value="4">4</option>
   </select>
+  <br>
 </div>
 
 <div id="status"></div>

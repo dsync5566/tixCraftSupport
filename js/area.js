@@ -1,6 +1,36 @@
 // area
 $("ul.area-list > li:not(:has(a))").hide();
 
+const badAreaArray = ["遮擋", "護網", "鐵網", "不完整"];
+
+chrome.storage.local.get({
+	HideBadArea: false,
+    ShowOnlyArea: false,
+    AreaName: ""
+}, items => {
+
+	if (items.ShowOnlyArea && items.AreaName.length) {
+		var AreaNameArray = items.AreaName.split(',');
+		console.log(AreaNameArray);
+		$("ul.area-list > li").each(function( index ) {
+            if (AreaNameArray.some(el => $(this).text().includes(el))) {
+                $(this).show();
+            } else {
+				$(this).hide();
+			}
+		});
+    }
+
+    if (items.HideBadArea) {
+		$("ul.area-list > li").each(function( index ) {
+            if (badAreaArray.some(el => $(this).text().includes(el))) {
+                $(this).hide();
+            }
+		});
+    }
+});
+
+
 let actualCode = `
 setTimeout(function() {
   document.dispatchEvent(new CustomEvent('connectExtension', {detail: areaUrlList}));
