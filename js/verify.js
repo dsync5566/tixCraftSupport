@@ -15,3 +15,5 @@ if (title.includes("中信")) {
 
 $("#checkCode").val(num).select();
 console.log($("#checkCode").val());
+
+

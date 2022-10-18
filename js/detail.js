@@ -1,4 +1,14 @@
-//
+// login check
+let loginText = $(".account-login").text();
+// console.log("LOGIN TEXT = "+loginText);
+if (loginText.includes("會員登入")) {
+  alert("!!! === !!!!\n\n加速購買流程\n請先登入\n\n!!! === !!!!");
+
+  let $loginImage = $(".login-notice img");
+  $loginImage.width($loginImage.width()*2);
+}
+
+// find link
 $(".activityContent ul.list-inline a").each(function() {
   if ($(this).attr("href").match(/activity\/game\//)) {
     console.log("find activity game !!");
@@ -12,7 +22,7 @@ $(".activityContent ul.list-inline a").each(function() {
 
         chrome.storage.local.get({
             ProgramAuto: false,
-            ProgramDate: '2019-09-01'
+            ProgramDate: '2022-12-23'
         }, items => {
             if (items.ProgramAuto) {
               let dstr = items.ProgramDate.replace(/-/g, "/");

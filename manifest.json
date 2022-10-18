@@ -1,7 +1,7 @@
 {
   "name": "tixCraft Support",
   "description": "購票輔助程式",
-  "version": "1.5",
+  "version": "1.6",
   "permissions": [ "activeTab", "storage" ],
   "background": {
     "scripts": [

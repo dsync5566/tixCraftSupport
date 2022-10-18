@@ -79,6 +79,6 @@ $("#TicketForm_checked").prop('name', ticketPrice);
 */
 
 //console.log( data.substr(data.indexOf("TicketForm[agree][", 4000), 63) );
-////console.log( data.substr(data.indexOf("#TicketForm_checked", 4000)+36, 69) );
+//console.log( data.substr(data.indexOf("#TicketForm_checked", 4000)+36, 69) );
 //console.log( data2 );
 //console.log( data2.substr(data2.indexOf("TicketForm[ticketPrice][", 100), 69) );
