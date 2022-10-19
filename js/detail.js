@@ -2,7 +2,18 @@
 let loginText = $(".account-login").text();
 // console.log("LOGIN TEXT = "+loginText);
 if (loginText.includes("會員登入")) {
-  alert("!!! === !!!!\n\n加速購買流程\n請先登入\n\n!!! === !!!!");
+  let todayDate = new Date().toISOString().slice(0, 10);
+
+  chrome.storage.local.get({
+      AlertDate: ''
+  }, items => {
+    if (items.AlertDate != todayDate) {
+      alert("!!! === !!!!\n\n加速購買流程\n請先登入\n\n!!! === !!!!");
+
+      var AlertDate = todayDate;
+      chrome.storage.local.set({AlertDate});
+    }
+  });
 
   let $loginImage = $(".login-notice img");
   $loginImage.width($loginImage.width()*2);
