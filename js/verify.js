@@ -1,7 +1,9 @@
-// credit check
 
+// console.log($.fn.jquery);
+
+// credit check
 let title = $(".activityT.title").text();
-let num;
+let num = "";
 
 if (title.includes("中信")) {
   num = "418230";
@@ -13,7 +15,15 @@ if (title.includes("中信")) {
   num = "";
 }
 
-$("#checkCode").val(num).select();
-console.log($("#checkCode").val());
+let $agreeItem = $(".promo-desc font");
+if (num === "" && $agreeItem) {
+  let str = $agreeItem.text();
+  console.log(str);
+  num = str.replace('「', '').replace('」', '');
+}
 
+if ($("input[name=checkCode]").length) {
+  console.log("num = " + num);
+  $("input[name=checkCode]").val(num).focus();
+}
 

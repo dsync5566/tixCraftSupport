@@ -2,15 +2,17 @@
 function save_options() {
     var ProgramAuto = document.getElementById('ProgramAuto').checked;
     var ProgramDate = document.getElementById('ProgramDate').value;
+    var ProgramOnly = document.getElementById('ProgramOnly').checked;
     var tselect = document.getElementById('TicketNumber');
     var TicketNumber = tselect.options[tselect.selectedIndex].value;
     var HideBadArea = document.getElementById('HideBadArea').checked;
     var ShowOnlyArea = document.getElementById('ShowOnlyArea').checked;
     var AreaName = document.getElementById('AreaName').value;
 
-    browser.storage.local.set({
+    chrome.storage.local.set({
         ProgramAuto,
         ProgramDate,
+        ProgramOnly,
         TicketNumber,
         HideBadArea,
         ShowOnlyArea,
@@ -26,9 +28,10 @@ function save_options() {
 }
 // Restores select box and checkbox state using the preferences stored in browser.storage.
 function restore_options() {
-    browser.storage.local.get({
+    chrome.storage.local.get({
         ProgramAuto: false,
-        ProgramDate: '2022-12-23',
+        ProgramDate: '2023-03-01',
+        ProgramOnly: false,
         TicketNumber: 0,
         HideBadArea: false,
         ShowOnlyArea: false,
@@ -37,6 +40,7 @@ function restore_options() {
         // console.log(items);
         document.getElementById('ProgramAuto').checked = items.ProgramAuto;
         document.getElementById('ProgramDate').value = items.ProgramDate;
+        document.getElementById('ProgramOnly').checked = items.ProgramOnly;
         document.getElementById('TicketNumber').selectedIndex = items.TicketNumber;
         document.getElementById('HideBadArea').checked = items.HideBadArea;
         document.getElementById('ShowOnlyArea').checked = items.ShowOnlyArea;
@@ -45,12 +49,13 @@ function restore_options() {
 }
 document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('save').addEventListener('click', save_options);
-document.getElementById('ver').textContent = " v" + browser.runtime.getManifest().version;
+document.getElementById('ver').textContent = " v" + chrome.runtime.getManifest().version;
 
 // show program information
 //let AreaInfo = browser.extension.getBackgroundPage().AreaInfo;
 //console.log(AreaInfo);
-let AreaInfo2 = browser.extension.getBackgroundPage().AreaInfo2;
+/*
+let AreaInfo2 = chrome.runtime.getBackgroundPage().AreaInfo2;
 console.log(AreaInfo2);
 
 if (AreaInfo2 && AreaInfo2.title) {
@@ -76,6 +81,7 @@ if (AreaInfo2 && AreaInfo2.title) {
 
     document.getElementById('AreaList').innerHTML = AreaList;
 }
+*/
 
 /*
 if (AreaInfo && AreaInfo.list) {

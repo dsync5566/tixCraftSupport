@@ -1,15 +1,17 @@
 // Called when the user clicks on the browser action.
-browser.browserAction.onClicked.addListener(tab => {
-  browser.tabs.create({
-    url: browser.extension.getURL("options.html")
+chrome.action.onClicked.addListener(tab => {
+  chrome.tabs.create({
+    url: chrome.runtime.getURL("options.html")
   })
 });
 
 // global
 var checkCode = "";
+
 // var AreaInfo = {};
+/*
 var AreaInfo2 = {};
-browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   // const tabId = sender.tab.id
   // console.log(message, tabId)
   if (AreaInfo2.title == message.title) {
@@ -47,9 +49,9 @@ function areaCompare(a, b) {
     return a.id.length - b.id.length;
   }
 }
+*/
 
-
-    // title: $(".activityT.title").text(),
-    // date: $(".select01 :selected").text().substr(0, 14),
-    // url: location.origin,
-    // list: []
+// title: $(".activityT.title").text(),
+// date: $(".select01 :selected").text().substr(0, 14),
+// url: location.origin,
+// list: []
