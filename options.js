@@ -1,6 +1,9 @@
 // Saves options to browser.storage
 function save_options() {
     var ProgramAuto = document.getElementById('ProgramAuto').checked;
+    var ProgramAuto2 = document.getElementById('ProgramAuto2').checked;
+    var ProgramAuto3 = document.getElementById('ProgramAuto3').checked;
+    var ProgramAuto4 = document.getElementById('ProgramAuto4').checked;
     var ProgramDate = document.getElementById('ProgramDate').value;
     var ProgramOnly = document.getElementById('ProgramOnly').checked;
     var tselect = document.getElementById('TicketNumber');
@@ -11,6 +14,9 @@ function save_options() {
 
     chrome.storage.local.set({
         ProgramAuto,
+        ProgramAuto2,
+        ProgramAuto3,
+        ProgramAuto4,
         ProgramDate,
         ProgramOnly,
         TicketNumber,
@@ -30,7 +36,10 @@ function save_options() {
 function restore_options() {
     chrome.storage.local.get({
         ProgramAuto: false,
-        ProgramDate: '2023-03-01',
+        ProgramAuto2: false,
+        ProgramAuto3: false,
+        ProgramAuto4: false,
+        ProgramDate: '2023-12-08',
         ProgramOnly: false,
         TicketNumber: 0,
         HideBadArea: false,
@@ -39,6 +48,9 @@ function restore_options() {
     }).then(items => {
         // console.log(items);
         document.getElementById('ProgramAuto').checked = items.ProgramAuto;
+        document.getElementById('ProgramAuto2').checked = items.ProgramAuto2;
+        document.getElementById('ProgramAuto3').checked = items.ProgramAuto3;
+        document.getElementById('ProgramAuto4').checked = items.ProgramAuto4;
         document.getElementById('ProgramDate').value = items.ProgramDate;
         document.getElementById('ProgramOnly').checked = items.ProgramOnly;
         document.getElementById('TicketNumber').selectedIndex = items.TicketNumber;

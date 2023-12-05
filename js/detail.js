@@ -49,12 +49,24 @@ $(".activityContent ul.list-inline a").each(function() {
 
     chrome.storage.local.get({
         ProgramAuto: false,
-        ProgramDate: '2023-03-01'
+        ProgramAuto2: false,
+        ProgramAuto3: false,
+        ProgramAuto4: false,
+        ProgramDate: '2023-12-08'
     }, items => {
-        if (items.ProgramAuto) {
+        if (items.ProgramAuto || items.ProgramAuto2 || items.ProgramAuto3 || items.ProgramAuto4) {
           var myInterval = setInterval(() => {
             let dstr = items.ProgramDate.replace(/-/g, "/");
-            let target = $("#gameList td:contains('" + dstr + "')").first();
+            let target;
+            if (items.ProgramAuto) {
+              target = $("#gameList td:contains('" + dstr + "')").first();
+            } else if (items.ProgramAuto2) {
+              target = $("#gameList td:contains('" + dstr + "'):eq(1)");
+            } else if (items.ProgramAuto3) {
+              target = $("#gameList td:contains('" + dstr + "'):eq(2)");
+            } else if (items.ProgramAuto4) {
+              target = $("#gameList td:contains('" + dstr + "'):eq(3)");
+            }
             console.log("date 1: " + dstr);
 
             if (target.length) {

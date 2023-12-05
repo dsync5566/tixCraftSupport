@@ -1,7 +1,7 @@
 // ticket
 
-if ($("#ticketPriceList select").length == 1) {
-  let $ticket_options = $("#ticketPriceList select option");
+if ($("#ticketPriceList select").length > 0) {
+  let $ticket_options = $("#ticketPriceList select:first option");
   if ($ticket_options.length) {
     chrome.storage.local.get({
       TicketNumber: 0
